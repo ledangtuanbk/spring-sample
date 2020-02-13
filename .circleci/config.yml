@@ -3,3 +3,4 @@ jobs:
   build:
     docker:
       - image: ledangtuanbk/openjdk:8
+    steps:
