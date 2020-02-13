@@ -5,7 +5,7 @@ jobs:
     working_directory: ~/spring-sample
 
     docker:
-      - image: circleci/openjdk:8-jdk-stretch
+      - image: ledangtuanbk/openjdk:8
     steps:
 
       - checkout
