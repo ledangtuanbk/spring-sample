@@ -7,7 +7,11 @@ jobs:
     docker:
       - image: circleci/openjdk:8-jdk-stretch
     steps:
+
       - checkout
+
+      - restore_cache:
+          key: spring-sample-{{ checksum "pom.xml" }}
 
       - run: mvn dependency:go-offline
 
@@ -19,4 +23,4 @@ jobs:
       - run: mvn package
 
       - store_artifacts:
-          path: target/app.jar
+          path: target/spring-sample-0.0.1-SNAPSHOT.jar
